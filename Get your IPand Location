@@ -1,0 +1,8 @@
+import requests
+import bs4
+
+# this programm will give your ip adress, location and city
+r=requests.get("https://ipinfo.io/")
+r=r.json()
+print(f'your ip adress is :- {r["ip"]}\nyour longitude is :- {r["loc"].split(",")[0]}\nlatitude is {r["loc"].split(",")[1]}\nyour city is :- {r["city"]}')
+
