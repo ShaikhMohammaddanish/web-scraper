@@ -1,0 +1,8 @@
+import requests
+import bs4
+g=requests.get("https://www.spaceotechnologies.com/blog/")
+g=bs4.BeautifulSoup(g.text,"lxml")
+h=g.find_all("h2", {"class":"fonts-20 w-700 blackc mt10 mb10"})
+for i in h:
+    print(i.text)
+    print()
