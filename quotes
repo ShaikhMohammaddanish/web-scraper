@@ -7,4 +7,3 @@ r=bs4.BeautifulSoup(r.text,"lxml")
 j=r.find_all("div", {"class":"clearfix"})
 for i in j:
     print(f"{i.text}" , end="*******************************************************************************************")
-
