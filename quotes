@@ -1,0 +1,10 @@
+import requests
+import bs4
+
+#let's try this website
+r = requests.get("https://www.brainyquote.com/topics/beautiful-quotes#targetText=Beautiful%20Quotes&targetText=Love%20yourself%20for%20who%20you,smile%20is%20your%20best%20asset.&targetText=Smile%20from%20your%20heart%3B%20nothing,is%20happy%20to%20be%20herself.")
+r=bs4.BeautifulSoup(r.text,"lxml")
+j=r.find_all("div", {"class":"clearfix"})
+for i in j:
+    print(f"{i.text}" , end="*******************************************************************************************")
+
